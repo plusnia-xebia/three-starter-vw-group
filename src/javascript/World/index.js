@@ -7,6 +7,7 @@ import Plane from './Plane';
 import Fox from './Fox';
 import Hut from './Hut';
 import Transition from './Transition';
+import Candles from './Candles';
 
 export default class World {
     constructor(_option) {
@@ -43,10 +44,11 @@ export default class World {
     async start() {
         this.setControls();
         this.setMaterial();
-        this.setTorus();
-        this.setPlane();
-        this.setFox();
+        // this.setTorus();
+        // this.setPlane();
+        // this.setFox();
         this.setHut();
+        this.setCandles();
         this.setTransition();
 
         await this.transition.firstTransition();
@@ -98,6 +100,15 @@ export default class World {
             debug: this.debugFolder,
         });
         this.container.add(this.hut.container);
+    }
+
+    setCandles() {
+        this.candles = new Candles({
+            resources: this.resources,
+            time: this.time,
+            debug: this.debugFolder,
+        });
+        this.container.add(this.candles.container);
     }
 
     setTransition() {

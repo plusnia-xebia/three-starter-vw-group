@@ -19,7 +19,7 @@ export default class Hut {
 
     setHut() {
         this.gltf = this.resources.items.hut;
-        this.gltf.scene.scale.set(0.01, 0.01, 0.01);
+        this.gltf.scene.scale.set(0.015, 0.015, 0.015);
         this.container.add(this.gltf.scene);
 
         if (this.debug) {
