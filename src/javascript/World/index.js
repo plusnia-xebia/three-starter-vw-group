@@ -5,6 +5,7 @@ import Controls from './Controls';
 import Torus from './Torus';
 import Plane from './Plane';
 import Fox from './Fox';
+import Hut from './Hut';
 import Transition from './Transition';
 
 export default class World {
@@ -45,6 +46,7 @@ export default class World {
         this.setTorus();
         this.setPlane();
         this.setFox();
+        this.setHut();
         this.setTransition();
 
         await this.transition.firstTransition();
@@ -87,6 +89,15 @@ export default class World {
             debug: this.debugFolder,
         });
         this.container.add(this.fox.container);
+    }
+
+    setHut() {
+        this.hut = new Hut({
+            resources: this.resources,
+            time: this.time,
+            debug: this.debugFolder,
+        });
+        this.container.add(this.hut.container);
     }
 
     setTransition() {

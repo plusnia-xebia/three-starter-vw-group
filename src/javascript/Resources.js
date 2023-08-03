@@ -4,6 +4,7 @@ import EventEmitter from './Utils/EventEmitter';
 import matcapRedSource from '../models/matcaps/red.png';
 import matcapGoldSource from '../models/matcaps/gold.png';
 import foxSource from '../models/fox/glTF-Binary/Fox.glb';
+import hutSource from '../models/hut/glTF-Binary/Hut.glb';
 
 export default class Resources extends EventEmitter {
     constructor() {
@@ -30,6 +31,7 @@ export default class Resources extends EventEmitter {
             { name: 'matcapRed', source: matcapRedSource },
             { name: 'matcapGold', source: matcapGoldSource },
             { name: 'fox', source: foxSource },
+            { name: 'hut', source: hutSource },
         ]);
     }
 }
