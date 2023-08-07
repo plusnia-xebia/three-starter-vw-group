@@ -18,8 +18,8 @@ export default class Camera {
     setInstance() {
         const { width, height } = this.sizes.viewport;
         this.instance = new THREE.PerspectiveCamera(75, width / height, 0.1, 100);
-        this.instance.position.set(0.25, 0.4, 2);
-        this.instance.lookAt(new THREE.Vector3());
+        this.instance.position.set(0.25, 0.75, 2);
+        this.instance.lookAt(new THREE.Vector3(0, 1, 0));
         this.container.add(this.instance);
 
         this.sizes.on('resize', () => {
