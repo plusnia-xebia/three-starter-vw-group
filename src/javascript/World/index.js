@@ -8,6 +8,7 @@ import Fox from './Fox';
 import Hut from './Hut';
 import Transition from './Transition';
 import Candles from './Candles';
+import Table from './Table';
 
 export default class World {
     constructor(_option) {
@@ -48,6 +49,7 @@ export default class World {
         // this.setPlane();
         // this.setFox();
         this.setHut();
+        this.setTable();
         this.setCandles();
         this.setTransition();
 
@@ -100,6 +102,15 @@ export default class World {
             debug: this.debugFolder,
         });
         this.container.add(this.hut.container);
+    }
+
+    setTable() {
+        this.table = new Table({
+            resources: this.resources,
+            time: this.time,
+            debug: this.debugFolder,
+        });
+        this.container.add(this.table.container);
     }
 
     setCandles() {
